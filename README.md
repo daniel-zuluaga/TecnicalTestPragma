@@ -1,4 +1,4 @@
-# tecnical_test_pragma
+# Tecnical Test Pragma
 
 A new Flutter project.
 
