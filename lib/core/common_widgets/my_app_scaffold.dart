@@ -29,15 +29,12 @@ class MyAppScaffold extends StatelessWidget {
         body: Padding(
           padding: paddingColumn ?? EdgeInsets.zero,
           child: Center(
-            child: SingleChildScrollView(
-              scrollDirection: scrollDirection ?? Axis.vertical,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
-                crossAxisAlignment:
-                    crossAxisAlignment ?? CrossAxisAlignment.center,
-                children: children,
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
+              crossAxisAlignment:
+                  crossAxisAlignment ?? CrossAxisAlignment.center,
+              children: children,
             ),
           ),
         ),
