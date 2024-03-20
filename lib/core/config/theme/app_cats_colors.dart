@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class AppCatsColor {
   Map<String, Color> mapColors = {
     "W": Colors.white,
-    'BG': const Color.fromARGB(255, 234, 234, 234),
+    'BG': const Color.fromARGB(255, 240, 240, 240),
+    "LigthGreen": const Color.fromARGB(255, 177, 224, 179),
+    "LigthGrey": const Color.fromARGB(255, 225, 223, 223)
   };
 
   MaterialColor black = const MaterialColor(0xFF141414, {
