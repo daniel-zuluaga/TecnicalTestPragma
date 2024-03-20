@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tecnical_test_pragma/core/common_widgets/network_image.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/text/text_widget.dart';
 import 'package:tecnical_test_pragma/core/config/theme/app_cats_colors.dart';
 
@@ -52,37 +53,7 @@ class CardCatWidget extends StatelessWidget {
               ],
             ),
             SizedBox(height: 5.h),
-            Image.network(
-              imageUrlCat,
-              height: 250,
-              errorBuilder: (context, error, stackTrace) {
-                if (stackTrace != null) {
-                  return Image.network(
-                    "https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg?w=1480",
-                    height: 250,
-                  );
-                } else {
-                  return Image.network(
-                    imageUrlCat,
-                    height: 250,
-                  );
-                }
-              },
-              loadingBuilder: (context, child, loadingProgress) {
-                if (loadingProgress == null) {
-                  return child;
-                } else {
-                  return Center(
-                    child: CircularProgressIndicator(
-                      value: loadingProgress.expectedTotalBytes != null
-                          ? loadingProgress.cumulativeBytesLoaded /
-                              loadingProgress.expectedTotalBytes!
-                          : null,
-                    ),
-                  );
-                }
-              },
-            ),
+            NetworkImageWidget(imageUrl: imageUrlCat),
             SizedBox(height: 5.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
