@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tecnical_test_pragma/app_cats_responsive.dart';
 import 'package:tecnical_test_pragma/core/injector/injector.dart';
 import 'package:tecnical_test_pragma/features/landing_cats/presentation/bloc/landing_cats_bloc.dart';
-import 'package:tecnical_test_pragma/features/landing_cats/presentation/pages/landing_page.dart';
-import 'package:tecnical_test_pragma/features/splash/presentation/pages/splash_catbreeds.dart';
+import 'routers/app_routers.dart';
 
 void main() {
   Injector.setup();
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
           minTextAdapt: true,
           useInheritedMediaQuery: true,
           designSize: AppCatsResponsiveApp.designSizeSmall,
-          builder: ((context, child) => MaterialApp(
+          builder: ((context, child) => MaterialApp.router(
                 // localizationsDelegates: const [
                 //   GlobalMaterialLocalizations.delegate,
                 //   GlobalWidgetsLocalizations.delegate,
@@ -44,15 +43,11 @@ class MyApp extends StatelessWidget {
                 },
 
                 title: 'enMedallo',
-                // routeInformationParser:
-                //     AppRoute().getGoRouter().routeInformationParser,
-                // routeInformationProvider:
-                //     AppRoute().getGoRouter().routeInformationProvider,
-                initialRoute: "splashCat",
-                routes: {
-                  "splashCat": (context) => const SplashCatBreeds(),
-                  "home": (context) => const LandingPage()
-                },
+                routeInformationParser:
+                    AppRoute.getGoRouter().routeInformationParser,
+                routeInformationProvider:
+                    AppRoute.getGoRouter().routeInformationProvider,
+                routerDelegate: AppRoute.getGoRouter().routerDelegate,
                 debugShowCheckedModeBanner: false,
               ))),
     );
