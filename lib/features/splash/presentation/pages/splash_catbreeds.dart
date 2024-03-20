@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tecnical_test_pragma/cats_icons.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/my_app_scaffold.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/text/text_widget.dart';
 import 'package:tecnical_test_pragma/core/config/theme/app_cats_colors.dart';
+import 'package:tecnical_test_pragma/routers/routers.dart';
 
 class SplashCatBreeds extends StatefulWidget {
   const SplashCatBreeds({super.key});
@@ -29,7 +31,7 @@ class _SplashCatBreedsState extends State<SplashCatBreeds> {
   }
 
   route() {
-    Navigator.pushNamed(context, 'home');
+    context.goNamed(homePage);
   }
 
   @override
@@ -44,11 +46,13 @@ class _SplashCatBreedsState extends State<SplashCatBreeds> {
         child: Image.asset(CatsIcons.imageCatSplash, width: 200.w, height: 300),
       ),
       children: [
-        TextWidget(
-            text: "Catbreeds",
-            fontSize: 42,
-            fontWeight: FontWeight.bold,
-            colorText: wColor.black),
+        Center(
+          child: TextWidget(
+              text: "Catbreeds",
+              fontSize: 42,
+              fontWeight: FontWeight.bold,
+              colorText: wColor.black),
+        ),
         SizedBox(
           height: 170.h,
         )
