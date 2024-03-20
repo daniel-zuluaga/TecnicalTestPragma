@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/card/card_cat_widget.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/my_app_scaffold.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/text/text_widget.dart';
 import 'package:tecnical_test_pragma/core/config/helpers/form_submission_status.dart';
 import 'package:tecnical_test_pragma/core/config/theme/app_cats_colors.dart';
 import 'package:tecnical_test_pragma/features/landing_cats/presentation/bloc/landing_cats_bloc.dart';
+import 'package:tecnical_test_pragma/routers/routers.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -30,7 +32,6 @@ class _LandingPageState extends State<LandingPage> {
     return BlocBuilder<LandingCatsBloc, LandingCatsState>(
       builder: (context, state) {
         return MyAppScaffold(
-          backgroundColor: wColor.mapColors["BG"],
           paddingColumn: EdgeInsets.symmetric(horizontal: 12.w),
           appBar: AppBar(
             automaticallyImplyLeading: false,
@@ -46,7 +47,8 @@ class _LandingPageState extends State<LandingPage> {
                       EdgeInsets.only(left: 12.w, right: 12.w, bottom: 5.h),
                   child: Container(
                     decoration: BoxDecoration(
-                        border: Border.all(color: wColor.black, width: 1)),
+                        border: Border.all(color: wColor.black, width: 1),
+                        borderRadius: BorderRadius.circular(8)),
                     child: Padding(
                       padding: EdgeInsets.only(left: 8.w, right: 8.w),
                       child: Row(
@@ -84,7 +86,10 @@ class _LandingPageState extends State<LandingPage> {
                             imageUrlCat: state.listAllCats![index].urlImage,
                             countryOrigin: state.listAllCats![index].origin,
                             intelligent: state.listAllCats![index].intelligence,
-                            onPressed: () {},
+                            onPressed: () {
+                              context.goNamed(detailPage,
+                                  extra: state.listAllCats![index]);
+                            },
                           );
                         },
                         separatorBuilder: (BuildContext context, int index) =>

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tecnical_test_pragma/core/config/theme/app_cats_colors.dart';
 
 class MyAppScaffold extends StatelessWidget {
   const MyAppScaffold(
@@ -24,18 +25,14 @@ class MyAppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor ?? AppCatsColor().mapColors["BG"],
         appBar: appBar,
         body: Padding(
           padding: paddingColumn ?? EdgeInsets.zero,
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
-              crossAxisAlignment:
-                  crossAxisAlignment ?? CrossAxisAlignment.center,
-              children: children,
-            ),
+          child: Column(
+            mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.center,
+            crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
+            children: children,
           ),
         ),
         bottomSheet: Padding(
