@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tecnical_test_pragma/app_cats_responsive.dart';
 import 'package:tecnical_test_pragma/core/injector/injector.dart';
 import 'package:tecnical_test_pragma/features/landing_cats/presentation/bloc/landing_cats_bloc.dart';
-import 'routers/app_routers.dart';
+import 'routers/app_route.dart';
 
 void main() {
   Injector.setup();

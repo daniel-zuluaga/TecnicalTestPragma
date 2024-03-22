@@ -23,4 +23,8 @@ class AppCatsColor {
     800: Color(0xFF000000),
     900: Color(0xFF000000),
   });
+
+  MaterialColor lightBlue = MaterialColor(Colors.blue.value, {
+    100: Colors.blue[100]!,
+  });
 }

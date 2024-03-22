@@ -35,10 +35,7 @@ class MyAppScaffold extends StatelessWidget {
             children: children,
           ),
         ),
-        bottomSheet: Padding(
-          padding: paddingColumn ?? EdgeInsets.zero,
-          child: bottomSheet,
-        ),
+        bottomSheet: bottomSheet,
       ),
     );
   }

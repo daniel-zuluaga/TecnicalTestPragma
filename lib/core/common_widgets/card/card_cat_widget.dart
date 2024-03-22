@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tecnical_test_pragma/core/common_widgets/breed_characteristic_widget.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/network_image.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/text/text_widget.dart';
 import 'package:tecnical_test_pragma/core/config/theme/app_cats_colors.dart';
@@ -58,15 +59,19 @@ class CardCatWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextWidget(
-                  text: countryOrigin,
-                  fontSize: 18,
-                  colorText: wColor.black,
+                Expanded(
+                  child: TextWidget(
+                    text: countryOrigin,
+                    fontSize: 18,
+                    colorText: wColor.black,
+                  ),
                 ),
-                TextWidget(
-                  text: intelligent.toString(),
-                  fontSize: 18,
-                  colorText: wColor.black,
+                BreedCharacteristicWidget(
+                  width: 190.w,
+                  nameCharacteristic: "Intelligence:",
+                  value: intelligent,
+                  radius: 10,
+                  fontSize: 20,
                 )
               ],
             ),
