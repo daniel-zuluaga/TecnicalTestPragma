@@ -42,7 +42,8 @@ class _SplashCatBreedsState extends State<SplashCatBreeds> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       paddingColumn: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-      bottomSheet: SizedBox(
+      bottomSheet: Container(
+        color: wColor.mapColors["W"],
         child: Image.asset(CatsIcons.imageCatSplash, width: 200.w, height: 300),
       ),
       children: [
