@@ -7,6 +7,7 @@ import 'package:tecnical_test_pragma/core/common_widgets/my_app_scaffold.dart';
 import 'package:tecnical_test_pragma/core/common_widgets/text/text_widget.dart';
 import 'package:tecnical_test_pragma/core/config/helpers/form_submission_status.dart';
 import 'package:tecnical_test_pragma/core/config/theme/app_cats_colors.dart';
+import 'package:tecnical_test_pragma/features/landing_cats/presentation/widgets/search_delegate_all_catbreeds.dart';
 import 'package:tecnical_test_pragma/features/landing_cats/presentation/bloc/landing_cats_bloc.dart';
 import 'package:tecnical_test_pragma/routers/routers.dart';
 
@@ -47,6 +48,7 @@ class _LandingPageState extends State<LandingPage> {
                       EdgeInsets.only(left: 12.w, right: 12.w, bottom: 5.h),
                   child: Container(
                     decoration: BoxDecoration(
+                        color: wColor.mapColors["W"],
                         border: Border.all(color: wColor.black, width: 1),
                         borderRadius: BorderRadius.circular(8)),
                     child: Padding(
@@ -62,7 +64,15 @@ class _LandingPageState extends State<LandingPage> {
                             colorText: wColor.black,
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showSearch(
+                                    context: context,
+                                    delegate: SearchDelegateAllCatbreeds(
+                                        listCatBreedEntity:
+                                            state.listAllCats ?? [],
+                                        filterNamesSearched:
+                                            state.namesAlreadySearched ?? []));
+                              },
                               icon: const Icon(Icons.search_rounded))
                         ],
                       ),
